@@ -50,6 +50,6 @@
         <variable name="MICROPHONE_USAGE_DESCRIPTION" value=" " />
         <variable name="PHOTOLIBRARY_USAGE_DESCRIPTION" value=" " />
     </plugin>
-    <plugin name="org.apache.cordova.camera" spec="0.2.3" />
+    <!--<plugin name="org.apache.cordova.camera" spec="0.2.3" />-->
     <plugin name="cordova-plugin-ionic-webview" spec="^1.1.16" />
 </widget>
