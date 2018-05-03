@@ -1,0 +1,28 @@
+<ion-view cache-view="false" class="reference-page" view-title="{{vm.selected_audit.type}}">
+    <ion-content flex layout="column" layout-align="space-around center">
+        <form name="vm.form" novalidate ng-submit="vm.goToKriterien()" flex layout-fill layout="column" layout-align="space-around center">
+            <div layout="column" layout-align="start center">
+                <h3>{{'REFERENCE.TITLE' | translate}}</h3>
+                <md-input-container>
+                    <label style="display: none;"></label>
+                    <input id="name" name="name" ng-required="true" ng-model="vm.audit.name" type="text">
+                </md-input-container>
+                <div ng-messages="vm.form.name.$error" role="alert" multiple>
+                    <div ng-message="required">
+                        <p style="text-align: center; color: red;" >{{'REFERENCE.DESCRIPTION' | translate}}</p>
+                    </div>
+                </div>
+            </div>
+            <div style="width: 100%; margin-top: -100px" layout="column" layout-align="start center">
+                <md-button type="submit" md-colors="{background: 'grey-700'}"
+                           class="start-dc md-raised md-primary">
+                    {{'REPEAT_KRITERIEN.START_DC' | translate}}
+                </md-button>
+                <md-button ui-sref="app.main" md-colors="{background: 'grey-700'}"
+                           class="start-dc md-raised md-primary">
+                    {{'BACK' | translate}}
+                </md-button>
+            </div>
+        </form>
+   </ion-content>
+</ion-view>

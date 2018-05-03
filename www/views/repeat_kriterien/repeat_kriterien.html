@@ -1,0 +1,48 @@
+<ion-view cache-view="false" class="repeat-kriterien" view-title="<div class='layout-align-space-between layout-row'><span style='max-width: 250px;text-overflow: ellipsis;overflow: hidden;'>{{vm.selected_audit.type}}</span><span style='font-size: 10pt;'></span></div>">
+    <ion-content layout-fill layout="column" layout-align="space-around center">
+        <!--Frage {{vm.step + 1}} / {{vm.kriterien.length}}-->
+        <h3>{{vm.selectedKriterien.title}}</h3>
+        <!--<h3 ng-if="vm.selectedKriterien.process_type === 2">Wurde das Problem behoben?</h3>-->
+        <div class="answer-side buttons data" layout="column" layout-align="center center"
+             ng-if="vm.selectedKriterien.process_type === 3">
+            <md-input-container>
+                <label></label>
+                <textarea ng-model="vm.selectedKriterien.data" md-maxlength="75" rows="2" md-select-on-focus></textarea>
+            </md-input-container>
+            <md-button ng-disabled="!vm.selectedKriterien.photo.length"
+                       md-colors="vm.selectedKriterien.photo.length ? {background: 'green-600'} : ''" class="md-raised"
+                       ng-click="vm.acceptAnswer('Ja', false, 'Bestätigung')">
+                {{'CONTINUE' | translate}}
+            </md-button>
+
+            <md-button ng-click="vm.capturePhoto()" aria-label="Upload photo" class="md-raised"
+                       md-colors="{background: 'red-600'}">
+                {{'REPEAT_KRITERIEN.PHOTO' | translate}}
+            </md-button>
+
+        </div>
+
+        <div class="answer-side buttons" layout="column" layout-align="center center"
+             ng-if="vm.selectedKriterien.process_type === 2">
+            <md-button md-colors="{background: 'green-600'}" class="md-raised"
+                       ng-click="vm.acceptAnswer('Ja', false, 'Ja')">
+                {{'YES' | translate}}
+            </md-button>
+            <md-button class="md-raised md-warn" ng-click="vm.acceptAnswer('Nein', 'confirm', 'Nein')">
+                {{'NO' | translate}}
+            </md-button>
+        </div>
+
+        <div class="answer-side buttons" layout="column" layout-align="center center"
+             ng-if="vm.selectedKriterien.process_type === 5">
+            <md-button md-colors="{background: 'green-600'}" class="md-raised"
+                       ng-click="vm.acceptAnswer('Nein', 'end')">
+                {{'OKAY' | translate}}
+            </md-button>
+            <md-button class="md-raised md-warn" ng-click="vm.acceptAnswer('Nein', 'back')">
+                {{'BACK' | translate}}
+            </md-button>
+        </div>
+
+    </ion-content>
+</ion-view>

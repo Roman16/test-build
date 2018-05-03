@@ -1,0 +1,17 @@
+<ion-view cache-view="false" class="loader-signature" view-title=" {{vm.selectedKriterien.question}}">
+    <ion-content layout-fill layout="column" layout-align="space-around center">
+        <h3>{{vm.title}}</h3>
+        <!--<signature layout="column" layout-align="center center"></signature>-->
+        <div layout="column" layout-align="center center" class="data answer-side">
+            <h4 ng-if="!vm.isGetSignature">{{'END_STEP.RECEIVER' | translate}}</h4>
+            <div class="signature-side">
+                <div ng-click="vm.isGetSignature = false" style="margin-bottom:8px;" layout="row" layout-align="end" id="loader-tools"></div>
+                <div id="loader-signature"></div>
+            </div>
+
+            <md-button ng-disabled="!vm.isGetSignature" md-colors="vm.isGetSignature ? {background: 'green-600'} : ''" class="md-raised md-warn" ng-click="vm.acceptAnswer('Ja')">
+               {{'CONTINUE' | translate}}
+            </md-button>
+        </div>
+    </ion-content>
+</ion-view>

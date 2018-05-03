@@ -1,0 +1,11 @@
+{
+  "TEST": {
+    "BUTTON": "Auditübersicht"
+  },
+  "TESTL": {
+      "BUTTON": "Auditvorlage"
+  },
+  "KRITERIEN": {
+      "BUTTON": "Auditvorlage"
+  }
+}

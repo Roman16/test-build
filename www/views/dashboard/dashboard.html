@@ -1,0 +1,27 @@
+<ion-view class="dashboard">
+    <ion-content layout-fill>
+
+        <div layout-fill layout="column" layout-align="space-around center">
+            <div layout="column" layout-align="center center">
+                <img src="img/logo2.jpg" alt="">
+
+                <h3 style="padding: 8px 16px; text-align: center;">
+                    {{'DASHBOARD.TITLE' | translate}}
+                </h3>
+            </div>
+
+            <div class="select-locale-block">
+                <md-select ng-model="vm.locale" ng-change="vm.changeLocale()">
+                    <md-option ng-value="'de-DE'"><img style="width: 60px; height: 40px;" src="img/de.png" alt=""></md-option>
+                    <md-option ng-value="'en-US'"><img style="width: 60px; height: 40px;" src="img/en.png" alt=""></md-option>
+                    <md-option ng-value="'ru-RU'"><img style="width: 60px; height: 40px;" src="img/ru.png" alt=""></md-option>
+                </md-select>
+            </div>
+
+            <div  class="buttons-side"  layout="column" layout-align="end center">
+                <md-button md-colors="{background: 'grey-700'}" ng-click="vm.logout()" class="log-out zur-liste md-raised md-primary">{{vm.user.name}}, {{ 'DASHBOARD.OUT' | translate }}</md-button>
+                <md-button md-colors="{background: 'grey-700'}" ui-sref="app.main" class="log-out zur-liste md-raised md-primary">{{ 'DASHBOARD.TO_THE' | translate }}</md-button>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>
